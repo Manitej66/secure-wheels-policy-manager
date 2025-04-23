@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SecureWheels Insurance</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-view-underwriters.html" class="nav-link">View All Underwriters</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <h1 class="dashboard-title">Admin Dashboard</h1>
+        <p>Welcome, <span id="adminName">Admin</span>!</p>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h2>Underwriter Management</h2>
+            </div>
+            <div class="card-body">
+                <div class="actions-grid">
+                    <a href="admin-register-underwriter.html" class="action-card">
+                        <h3>Underwriter Registration</h3>
+                        <p>Register new underwriters in the system</p>
+                    </a>
+                    <a href="admin-search-underwriter.html" class="action-card">
+                        <h3>Search Underwriter</h3>
+                        <p>Find underwriter details by ID</p>
+                    </a>
+                    <a href="admin-update-password.html" class="action-card">
+                        <h3>Update Password</h3>
+                        <p>Change an underwriter's password</p>
+                    </a>
+                    <a href="admin-delete-underwriter.html" class="action-card">
+                        <h3>Delete Underwriter</h3>
+                        <p>Remove an underwriter from the system</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>

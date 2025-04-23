@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Underwriter - SecureWheels Insurance</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-view-underwriters.html" class="nav-link">View All Underwriters</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <div class="form-card">
+            <h2 class="form-title">Delete Underwriter</h2>
+            
+            <form id="deleteUnderwriterForm">
+                <div class="form-group">
+                    <label for="deleteId" class="form-label">Underwriter ID</label>
+                    <input type="text" class="form-control" id="deleteId" placeholder="Enter underwriter ID" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Delete Underwriter</button>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p id="formMessage"></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>

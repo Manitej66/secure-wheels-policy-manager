@@ -1,26 +1,91 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>secure-wheels-policy-manager</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureWheels Insurance</title>
+    <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <meta property="og:title" content="secure-wheels-policy-manager" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1 class="login-title">Welcome to SecureWheels</h1>
+                <p class="login-subtitle">Vehicle Insurance Management System</p>
+            </div>
+            
+            <div class="login-tabs">
+                <div class="login-tab active" data-tab="admin">Admin Login</div>
+                <div class="login-tab" data-tab="underwriter">Underwriter Login</div>
+            </div>
+            
+            <div class="login-form-container" id="adminLoginForm">
+                <form id="adminForm">
+                    <div class="form-group">
+                        <label for="adminUserId" class="form-label">User ID</label>
+                        <input type="text" class="form-control" id="adminUserId" placeholder="Enter admin user ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="adminPassword" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login as Admin</button>
+                </form>
+            </div>
+            
+            <div class="login-form-container hidden" id="underwriterLoginForm">
+                <form id="underwriterForm">
+                    <div class="form-group">
+                        <label for="underwriterUserId" class="form-label">User ID</label>
+                        <input type="text" class="form-control" id="underwriterUserId" placeholder="Enter underwriter ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="underwriterPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="underwriterPassword" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login as Underwriter</button>
+                </form>
+            </div>
+            
+            <div class="text-center mt-3">
+                <p id="loginMessage"></p>
+            </div>
+        </div>
+    </main>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <script src="src/scripts/auth.js"></script>
+    <script>
+        // Tab switching functionality
+        const loginTabs = document.querySelectorAll('.login-tab');
+        const loginForms = document.querySelectorAll('.login-form-container');
+        
+        loginTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Update active tab
+                loginTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show selected form
+                loginForms.forEach(form => form.classList.add('hidden'));
+                document.getElementById(tabId + 'LoginForm').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
 </html>

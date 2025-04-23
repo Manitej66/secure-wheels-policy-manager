@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Underwriter - SecureWheels Insurance</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-view-underwriters.html" class="nav-link">View All Underwriters</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <div class="form-card">
+            <h2 class="form-title">Register New Underwriter</h2>
+            
+            <form id="registerUnderwriterForm">
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="underwriterId" class="form-label">Underwriter ID</label>
+                            <input type="text" class="form-control" id="underwriterId" placeholder="Auto-generated" disabled>
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="underwriterName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="underwriterName" placeholder="Enter underwriter name" required maxlength="50">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="underwriterDOB" class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="underwriterDOB" required>
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="joiningDate" class="form-label">Joining Date</label>
+                            <input type="date" class="form-control" id="joiningDate" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="underwriterPassword" class="form-label">Default Password</label>
+                    <input type="password" class="form-control" id="underwriterPassword" placeholder="Enter default password" required>
+                    <small>Password must contain letters, numbers, and at least one special character</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register Underwriter</button>
+                </div>
+                
+                <div class="text-center mt-3" id="idContainer" style="display: none;">
+                    <p>New underwriter registered with ID: <strong id="generatedId"></strong></p>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p id="formMessage"></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/admin.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set the idContainer to hidden by default
+            document.getElementById('idContainer').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

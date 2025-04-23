@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwriter Dashboard - SecureWheels Insurance</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="underwriter-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="underwriter-create-policy.html" class="nav-link">Create Policy</a></li>
+                    <li class="nav-item"><a href="underwriter-view-policies.html" class="nav-link">View Policies</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <h1 class="dashboard-title">Underwriter Dashboard</h1>
+        <p>Welcome, <span id="underwriterName">Underwriter</span>!</p>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h2>Vehicle Insurance Management</h2>
+            </div>
+            <div class="card-body">
+                <div class="actions-grid">
+                    <a href="underwriter-create-policy.html" class="action-card">
+                        <h3>Create New Policy</h3>
+                        <p>Register a new vehicle insurance policy</p>
+                    </a>
+                    <a href="underwriter-view-policies.html" class="action-card">
+                        <h3>View All Policies</h3>
+                        <p>See all policies created by you</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/underwriter.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Policy - SecureWheels Insurance</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Secure<span>Wheels</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="underwriter-dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="underwriter-create-policy.html" class="nav-link">Create Policy</a></li>
+                    <li class="nav-item"><a href="underwriter-view-policies.html" class="nav-link">View Policies</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <div class="form-card">
+            <h2 class="form-title">Create New Vehicle Insurance Policy</h2>
+            
+            <form id="createPolicyForm">
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="vehicleNo" class="form-label">Vehicle Number</label>
+                            <input type="text" class="form-control" id="vehicleNo" placeholder="Enter vehicle number" required maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="vehicleType" class="form-label">Vehicle Type</label>
+                            <select class="form-control" id="vehicleType" required>
+                                <option value="">-- Select Vehicle Type --</option>
+                                <option value="2-wheeler">2-wheeler</option>
+                                <option value="4-wheeler">4-wheeler</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerName" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="Enter customer name" required maxlength="50">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="engineNo" class="form-label">Engine Number</label>
+                            <input type="text" class="form-control" id="engineNo" placeholder="Enter engine number" required>
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="chasisNo" class="form-label">Chasis Number</label>
+                            <input type="text" class="form-control" id="chasisNo" placeholder="Enter chasis number" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="phoneNo" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNo" placeholder="Enter 10-digit phone number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit number">
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="premiumAmount" class="form-label">Premium Amount</label>
+                            <input type="number" class="form-control" id="premiumAmount" placeholder="Enter premium amount" required min="1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="insuranceType" class="form-label">Insurance Type</label>
+                            <select class="form-control" id="insuranceType" required>
+                                <option value="">-- Select Insurance Type --</option>
+                                <option value="Full Insurance">Full Insurance</option>
+                                <option value="Third Party">Third Party</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="underwriterId" class="form-label">Underwriter ID</label>
+                            <input type="text" class="form-control" id="underwriterId" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="fromDate" class="form-label">From Date</label>
+                            <input type="date" class="form-control" id="fromDate" required>
+                        </div>
+                    </div>
+                    <div class="form-col form-col-half">
+                        <div class="form-group">
+                            <label for="toDate" class="form-label">To Date</label>
+                            <input type="date" class="form-control" id="toDate" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Create Policy</button>
+                </div>
+                
+                <div class="text-center mt-3 hidden" id="policyIdContainer">
+                    <p>New policy created with ID: <strong id="generatedPolicyId"></strong></p>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p id="formMessage"></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../scripts/auth.js"></script>
+    <script src="../scripts/underwriter.js"></script>
+</body>
+</html>
